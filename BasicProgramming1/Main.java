@@ -59,7 +59,7 @@ public class Main {
 
     public static void t3(int[] arr) {
         Arrays.sort(arr);
-        System.out.print(arr[1]);
+        System.out.println(arr[1]);
     }
 
     public static void t4(int[] arr) {
@@ -79,7 +79,7 @@ public class Main {
 
     public static void t6(int[] arr, int n) {
         String[] carr = new String[n];
-        for(int i = 0; i < arr.length; i++) {
+        for(int i = 0; i < n; i++) {
             int x = arr[i] % 26;
             carr[i] = String.valueOf((char)(x + 'a'));
         }
@@ -93,7 +93,7 @@ public class Main {
         List<Integer> temp = new ArrayList<Integer>();
         
         while(true) {
-            if(i >= n) {
+            if(i >= n || i < 0) {
                 System.out.println("Out");
                 return;
             } else if (i == n - 1) {
