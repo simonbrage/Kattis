@@ -58,20 +58,9 @@ public class Main {
     }
 
     public static void t3(long[] arr) {
-        long median = 0;
-        if (arr[0] > arr[1])
-        {
-            if (arr[0] < arr[2]) median=arr[0];
-            else if (arr[1] > arr[2]) median=arr[1];
-            else median=arr[2];
-        }
-        else
-        {
-            if (arr[0] > arr[2]) median=arr[0];
-            else if (arr[1] < arr[2]) median=arr[1];
-            else median=arr[2];
-        }
-        System.out.println(median);
+        long[] subArr = Arrays.copyOfRange(arr, 0, 3);
+        Arrays.sort(subArr);
+        System.out.println(subArr[1]);
     }
 
     public static void t4(long[] arr) {
