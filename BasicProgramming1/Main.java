@@ -9,7 +9,7 @@ public class Main {
 
         s.nextLine();
         String line = s.nextLine();
-        int[] arr = Arrays.stream(line.split(" ")).mapToInt(Integer::parseInt).toArray();
+        long[] arr = Arrays.stream(line.split(" ")).mapToLong(Long::parseLong).toArray();
 
         switch(t) {
             case 1:
@@ -43,11 +43,11 @@ public class Main {
         s.close();
     }
 
-    public static void t1(int[] arr) {
+    public static void t1(long[] arr) {
         System.out.println("7");
     }
 
-    public static void t2(int[] arr) {
+    public static void t2(long[] arr) {
         if(arr[0] > arr[1]) {
             System.out.println("Bigger");
         } else if(arr[0] == arr[1]) {
@@ -57,18 +57,30 @@ public class Main {
         }
     }
 
-    public static void t3(int[] arr) {
-        Arrays.sort(arr);
-        System.out.println(arr[1]);
+    public static void t3(long[] arr) {
+        long median = 0;
+        if (arr[0] > arr[1])
+        {
+            if (arr[0] < arr[2]) median=arr[0];
+            else if (arr[1] > arr[2]) median=arr[1];
+            else median=arr[2];
+        }
+        else
+        {
+            if (arr[0] > arr[2]) median=arr[0];
+            else if (arr[1] < arr[2]) median=arr[1];
+            else median=arr[2];
+        }
+        System.out.println(median);
     }
 
-    public static void t4(int[] arr) {
-        int sum = Arrays.stream(arr).sum();
+    public static void t4(long[] arr) {
+        long sum = Arrays.stream(arr).sum();
         System.out.println(sum);
     }
 
-    public static void t5(int[] arr, int n) {
-        int evenSum = 0;
+    public static void t5(long[] arr, int n) {
+        long evenSum = 0;
         for(int i = 0; i < n; i++) {
             if(arr[i] % 2 == 0) {
                 evenSum += arr[i];
@@ -77,10 +89,10 @@ public class Main {
         System.out.println(evenSum);
     }
 
-    public static void t6(int[] arr, int n) {
+    public static void t6(long[] arr, int n) {
         String[] carr = new String[n];
         for(int i = 0; i < n; i++) {
-            int x = arr[i] % 26;
+            long x = arr[i] % 26;
             carr[i] = String.valueOf((char)(x + 'a'));
         }
 
@@ -88,9 +100,9 @@ public class Main {
         System.out.println(joined);
     }
 
-    public static void t7(int[] arr, int n) {
-        int i = arr[0];
-        List<Integer> temp = new ArrayList<Integer>();
+    public static void t7(long[] arr, int n) {
+        long i = arr[0];
+        List<Long> temp = new ArrayList<Long>();
         
         while(true) {
             if(i >= n || i < 0) {
