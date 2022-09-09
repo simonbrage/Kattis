@@ -1,4 +1,4 @@
-// From Kattis ITU
+// From Kattis ITU 
 // ------------------------------------------------------
 // NOTE! This solution doesn't work in it's current state
 // ------------------------------------------------------
