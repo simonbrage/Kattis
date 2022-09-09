@@ -24,6 +24,7 @@ public class Main {
             Arrays.sort(arr);
 
             int total = 0;
+            
             int leftSpace = arr[0] - 6;
             int rightSpace = (l - 6) - arr[n-1];
 
