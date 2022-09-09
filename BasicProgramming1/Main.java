@@ -1,3 +1,7 @@
+// ------------------------------------------------------
+// NOTE! This solution doesn't work in it's current state
+// ------------------------------------------------------
+
 import java.util.*;
 
 public class Main {
@@ -91,20 +95,23 @@ public class Main {
 
     public static void t7(long[] arr, int n) {
         long i = arr[0];
-        List<Long> temp = new ArrayList<Long>();
+        HashSet<Long> temp = new HashSet<Long>();
         
-        while(true) {
-            if(i >= n || i < 0) {
-                System.out.println("Out");
-                return;
-            } else if (i == n - 1) {
+        temp.add(i);
+
+        while(i < arr.length) {
+            if (i == n - 1) {
                 System.out.println("Done");
                 return;
-            } else if(temp.contains(i)) {
+            } 
+            
+            i = arr[(int) i];
+
+            if(!temp.add(i)) {
                 System.out.println("Cyclic");
                 return;
             }
-            temp.add(i);
         }
+        System.out.println("Out");
     }
 }
