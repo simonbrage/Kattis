@@ -10,7 +10,6 @@ public class Main {
         
             long result = Math.abs(a - b);
             System.out.println(result);
-            
         }
         
         s.close();
