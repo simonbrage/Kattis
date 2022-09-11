@@ -1,6 +1,5 @@
-import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.*;
+
 public class Main {
 
     public static void main(String[] args)
@@ -11,8 +10,10 @@ public class Main {
 
         for(int i = 0; i < cases; i++) {
             line = s.nextLine();
-            if(line.startsWith("Simon says")) {
+            if(line.startsWith("simon says ")) {
                 System.out.println(line.substring(11));
+            } else {
+                System.out.println("");
             }
         }
         
